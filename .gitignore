@@ -1,0 +1,11 @@
+# Ignore compiled CSS files
+public/styles/main.css
+
+# Ignore compiled JS files
+public/scripts/main.js
+
+# Ignore node_modules directory
+node_modules/
+
+# package files
+package-lock.json

@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="icon", type="image/x-icon", href="/assets/favicon/favicon.ico")
+    block styles
+      link(rel="stylesheet", href="/styles/vendors/normalize.css")
+      link(rel="stylesheet", href="/styles/vendors/semantic.min.css")
+      link(rel="stylesheet", href="/styles/main.css")
+  body 
+    block content
+    block scripts
+      script(src="/scripts/vendors/jquery-3.7.1.min.js")
+      script(src="/scripts/vendors/semantic.min.js")
+      script(src="/scripts/main.js")
+

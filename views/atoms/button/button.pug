@@ -1,0 +1,21 @@
+mixin Button($modifier)
+  button.ui.button(class= $modifier)
+    block
+
+mixin BasicButton($modifier)
+  button.ui.basic.button(class= $modifier)
+    block
+
+mixin InvertedButton($modifier = '')
+  if $modifier === ''
+    button.ui.inverted.button
+      block
+  else
+    button.ui.inverted.button(class= $modifier)
+      block
+
+mixin AnimatedButton($vissibleContent, $hiddenContent)
+  .ui.animated.fade.button(tabindex='0')
+    .visible.content #{$vissibleContent}
+    .hidden.content
+      | #{$hiddenContent}
