@@ -1,0 +1,15 @@
+mixin button(props)
+  - const { text, className, size, id, icon } = props || {};
+  div(
+    class=`ui button ${className} ${size}`,
+    textindex=0,
+    id=id,
+    role="button",
+    aria-pressed="false",
+    aria-label=text
+  )
+    if icon
+      i(class="icon ${icon}")
+      | #{ text }
+    else
+      | #{ text }
