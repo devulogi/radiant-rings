@@ -1,0 +1,16 @@
+# Ignore minified files
+*.min.js
+*.min.css
+
+# Ignore compiled files
+*.css.map
+*.js.map
+
+# Ignore dependencies
+/node_modules
+
+# Ignore semantic UI
+/semantic
+
+# Ignore compiled files
+/dist
