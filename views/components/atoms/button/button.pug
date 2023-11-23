@@ -4,12 +4,12 @@ mixin button(props)
     class=`ui button ${className} ${size}`,
     textindex=0,
     id=id,
-    role="button",
-    aria-pressed="false",
+    role='button',
+    aria-pressed='false',
     aria-label=text
   )
     if icon
-      i(class="icon ${icon}")
+      i.icon(class=`${icon}`)
       | #{ text }
     else
       | #{ text }
