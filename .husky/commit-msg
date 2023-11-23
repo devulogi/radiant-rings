@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Lint commit message
+npx --no -- commitlint --edit ${1}
+
+# Check if commitlint exited with non-zero code
+if [ $? -ne 0 ]; then
+  echo "Commitlint failed"
+  exit 1
+fi
+
+# Append commit hash to commit message
+COMMIT_HASH=$(git rev-parse --short HEAD)
+echo "[$COMMIT_HASH]" >> ${1}
+
+# Get commit message
+# COMMIT_MSG=$(cat ${1})
+
+# Append commit message to CHANGELOG.md
+# echo "${COMMIT_MSG}" >> CHANGELOG.md
