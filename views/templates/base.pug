@@ -1,0 +1,39 @@
+doctype html
+html(
+  lang="en"
+)
+  head
+    meta(
+      charset="UTF-8"
+    )
+    meta(
+      name="viewport",
+      content="width=device-width, initial-scale=1.0"
+    )
+    title Document
+    link(
+      rel="icon",
+      type="image/x-icon",
+      href="/site/assets/favicon/favicon.ico"
+    )
+    block styles
+      link(
+        rel="stylesheet",
+        href="/site/assets/vendors/fomantic/fomantic.min.css"
+      )
+      link(
+        rel="stylesheet",
+        href="/site/styles/main.min.css"
+      )
+  body
+    block content
+    block scripts
+      script(
+        src="/site/assets/vendors/jquery/jquery-3.7.1.min.js"
+      )
+      script(
+        src="/site/assets/vendors/fomantic/fomantic.min.js"
+      )
+      script(
+        src="/site/scripts/main.min.js"
+      )
