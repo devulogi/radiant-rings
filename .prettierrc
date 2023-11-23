@@ -1,0 +1,14 @@
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "pugSingleQuote": false,
+  "pugAttributeSeparator": "always",
+  "plugins": ["@prettier/plugin-pug"],
+  "pugCommentPreserveSpaces": "trim-all",
+  "pugWrapAttributesThreshold": 1,
+  "pugEmptyAttributes": "none",
+  "pugClassLocation": "before-attributes",
+  "pugExplicitDiv": true
+}
