@@ -9,3 +9,18 @@ node_modules/
 
 # package files
 package-lock.json
+
+# Ignore .env file
+.env
+
+# Ignore .DS_Store file
+.DS_Store
+
+# Ignore .idea file
+.idea/
+
+# Ignore semantic-ui folder
+semantic/
+
+# Ignore semantic.json file
+semantic.json
