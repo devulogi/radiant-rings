@@ -1,0 +1,55 @@
+{
+  "site": {
+    "title": "Radiant Rings",
+    "description": "Radiant Rings is a small jewelry company based in Manila Philippines. We specialize in custom jewelry design and fabrication.",
+    "author": "Radiant Rings"
+  },
+  "pages": [
+    {
+      "title": "Home",
+      "url": "/",
+      "template": "home"
+    },
+    {
+      "title": "About",
+      "url": "/about",
+      "template": "about"
+    },
+    {
+      "title": "Contact",
+      "url": "/contact",
+      "template": "contact"
+    },
+    {
+      "title": "Gallery",
+      "url": "/gallery",
+      "template": "gallery"
+    },
+    {
+      "title": "Services",
+      "url": "/services",
+      "template": "services"
+    },
+    {
+      "title": "Testimonials",
+      "url": "/testimonials",
+      "template": "testimonials"
+    }
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/radiant.rings",
+    "twitter": "https://twitter.com/radiant_rings",
+    "instagram": "https://instagram.com/radiant_rings",
+    "pinterest": "https://www.pinterest.com/radiant_rings",
+    "googleplus": "https://plus.google.com/+RadiantRingsManila",
+    "linkedin": "https://www.linkedin.com/company/radiant-rings"
+  },
+  "contact": {
+    "email": "email@example.com",
+    "phone": "+63 2 123 4567",
+    "address": "1234 Main St, Manila, Philippines"
+  },
+  "analytics": {
+    "google": "placeholder"
+  }
+}
