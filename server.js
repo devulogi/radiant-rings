@@ -10,6 +10,10 @@ const publicDir = path.join(__dirname, 'public');
 const viewsDir = path.join(__dirname, 'views');
 const app = express();
 
+// set app locals from app.conf.json
+const appConf = require('./app.conf.json');
+app.locals = appConf;
+
 app.set('view engine', 'pug');
 app.set('views', `${viewsDir}/pages`);
 
