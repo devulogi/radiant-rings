@@ -16,11 +16,6 @@
       "template": "about"
     },
     {
-      "title": "Contact",
-      "url": "/contact",
-      "template": "contact"
-    },
-    {
       "title": "Gallery",
       "url": "/gallery",
       "template": "gallery"
