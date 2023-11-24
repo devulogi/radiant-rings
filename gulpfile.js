@@ -14,11 +14,11 @@ const paths = {
   models: {
     src: 'models/**/*.js'
   },
-  controllers: {
-    src: 'controllers/**/*.js'
-  },
   views: {
     src: 'views/**/*.pug'
+  },
+  controllers: {
+    src: 'controllers/**/*.js'
   },
   styles: {
     src: 'views/**/*.styl',
