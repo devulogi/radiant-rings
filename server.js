@@ -5,28 +5,27 @@ const favicon = require('serve-favicon');
 const compression = require('compression');
 require('dotenv').config();
 
-const port = process.env.PORT || 3000;
-const publicDir = path.join(__dirname, 'public');
-const viewsDir = path.join(__dirname, 'views');
-const app = express();
+const port = process.env.PORT || 3000; // set port
+const publicDir = path.join(__dirname, 'public'); // set public directory
+const viewsDir = path.join(__dirname, 'views'); // set views directory
+const app = express(); // create express app
 
-// set app locals from app.conf.json
 const appConf = require('./app.conf.json');
-app.locals = appConf;
+app.locals = appConf; // set app locals from app.conf.json file (e.g. app.locals.siteName)
 
-app.set('view engine', 'pug');
-app.set('views', `${viewsDir}/pages`);
+app.set('view engine', 'pug'); // set view engine
+app.set('views', `${viewsDir}/pages`); // set views directory
 
 app.use(
   favicon(path.join(__dirname, 'public', 'site/assets/favicon/favicon.ico'))
-);
-app.use(express.static(publicDir));
+); // serve favicon
+app.use(express.static(publicDir)); // serve static files
 
-app.use(morgan('dev'));
-app.use(compression());
+app.use(morgan('dev')); // log requests to the console (dev)
+app.use(compression()); // compress all requests
 
-app.get('/', require('./controllers/home.controller'));
-app.get('/about', require('./controllers/about.controller'));
+app.get('/', require('./controllers/home.controller')); // set home route
+app.get('/about', require('./controllers/about.controller')); // set about route
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
