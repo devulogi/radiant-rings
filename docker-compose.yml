@@ -1,7 +1,8 @@
 version: '3.8'
-
+name: radiant-rings
 services:
   app:
+    container_name: radiant-rings_app
     build:
       context: .
       dockerfile: ./docker/Dockerfile.dev
@@ -24,6 +25,7 @@ services:
       - mongo
     command: npm run dev
   mongo:
+    container_name: radiant-rings_mongo
     image: mongo:latest
     restart: always
     ports:
