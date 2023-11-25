@@ -7,7 +7,7 @@
     "fomantic-install": "cd node_modules/fomantic-ui && npx gulp install",
     "fomantic-build": "cd node_modules/fomantic-ui && npx gulp build",
     "start": "nodemon server.js",
-    "dev": "gulp & nodemon server.js",
+    "dev": "gulp & nodemon --inspect=0.0.0.0:9229 server.js",
     "prepare": "husky install",
     "precommit-pug": "prettier --write '**/*.pug' --plugin='@prettier/plugin-pug'",
     "release": "standard-version"
