@@ -13,6 +13,7 @@ services:
       - '3000:3000'
       - '3001:3001' # for browser-sync hot-reloading
       - '3002:3002' # for browser-sync proxy server
+      - '9229:9229' # for debugging in chrome devtools
     env_file:
       - .env.development
     environment:
