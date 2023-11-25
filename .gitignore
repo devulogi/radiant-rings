@@ -24,3 +24,6 @@ semantic/
 
 # Ignore semantic.json file
 semantic.json
+
+# Ignore data folder
+data/
