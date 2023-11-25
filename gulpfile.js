@@ -102,7 +102,8 @@ function fomantic_themes() {
 function watch() {
   browserSync.init({
     proxy: 'localhost:3000',
-    notify: true
+    notify: true,
+    open: false
   });
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.scripts.src, scripts);
