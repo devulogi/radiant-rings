@@ -3,7 +3,10 @@ const path = require('path');
 const morgan = require('morgan');
 const favicon = require('serve-favicon');
 const compression = require('compression');
-require('dotenv').config();
+const mongoose = require('mongoose');
+require('dotenv').config({
+  path: path.join(__dirname, '.env.development')
+});
 
 const port = process.env.PORT || 3000; // set port
 const publicDir = path.join(__dirname, 'public'); // set public directory
@@ -26,6 +29,20 @@ app.use(compression()); // compress all requests
 
 app.get('/', require('./controllers/home.controller')); // set home route
 app.get('/about', require('./controllers/about.controller')); // set about route
+
+// connect to MongoDB
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+mongoose.connection.on('error', (err) => {
+  console.error(err);
+  console.log('MongoDB connection error. Please make sure MongoDB is running.');
+  process.exit();
+});
+mongoose.connection.once('open', () => {
+  console.log('MongoDB connected successfully!');
+});
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

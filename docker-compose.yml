@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.dev
+    restart: always
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '3000:3000'
+      - '3001:3001' # for browser-sync hot-reloading
+      - '3002:3002' # for browser-sync proxy server
+    env_file:
+      - .env.development
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo:27017/radiant-rings
+    depends_on:
+      - mongo
+    command: npm run dev
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data:/data/db
+
+volumes:
+  data:
