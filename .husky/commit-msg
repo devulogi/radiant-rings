@@ -13,9 +13,3 @@ fi
 # Append commit hash to commit message
 COMMIT_HASH=$(git rev-parse --short HEAD)
 echo "[$COMMIT_HASH]" >> ${1}
-
-# Get commit message
-# COMMIT_MSG=$(cat ${1})
-
-# Append commit message to CHANGELOG.md
-# echo "${COMMIT_MSG}" >> CHANGELOG.md
