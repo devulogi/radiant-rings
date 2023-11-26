@@ -42,10 +42,7 @@ app.get('/about', require('./controllers/about.controller')); // set about route
 
 // connect to MongoDB
 if (process.env.MONGO_URI) {
-  mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
+  mongoose.connect(process.env.MONGO_URI);
   mongoose.connection.on('error', (err) => {
     console.error(err);
     console.log(
