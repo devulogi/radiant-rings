@@ -13,9 +13,7 @@
       "remoteRoot": "/app",
       "restart": true,
       "sourceMaps": true,
-      "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
-      ]
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
     },
     {
       "type": "node",
