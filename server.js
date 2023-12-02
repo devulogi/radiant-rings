@@ -4,8 +4,6 @@ const morgan = require('morgan');
 const favicon = require('serve-favicon');
 const compression = require('compression');
 const mongoose = require('mongoose');
-const helmet = require('helmet'); // package for setting HTTP headers for security
-const rateLimit = require('express-rate-limit'); // package for rate limiting requests
 require('dotenv').config({
   path: path.join(__dirname, '.env.development')
 });
@@ -27,18 +25,19 @@ app.use(
 app.use(express.static(publicDir)); // serve static files
 
 app.use(morgan('dev')); // log requests to the console (dev)
+app.use(express.json()); // parse application/json
+app.use(express.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
 app.use(compression()); // compress all requests
-app.use(helmet()); // set HTTP headers for security
-
-// Rate limit requests
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
-});
-app.use(limiter);
 
 app.get('/', require('./controllers/home.controller')); // set home route
 app.get('/about', require('./controllers/about.controller')); // set about route
+
+app.get('/followers/:id', (req, res) => {
+  res.json({
+    id: req.params.id,
+    followers: 1000
+  });
+});
 
 // connect to MongoDB
 if (process.env.MONGO_URI) {
