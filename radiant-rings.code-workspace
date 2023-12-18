@@ -4,5 +4,8 @@
       "path": "."
     }
   ],
-  "settings": {}
+  "settings": {
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.enableImages": true
+  }
 }
